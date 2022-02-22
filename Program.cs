@@ -10,13 +10,13 @@ namespace Generics
         {
             Console.WriteLine("Enter three value\n");
             Console.Write("First value:");
-            double firstNo = Convert.ToDouble(Console.ReadLine());
+            string firstNo = Console.ReadLine();
 
             Console.Write("Second value:");
-            double SecondNo = Convert.ToDouble(Console.ReadLine());
+            string SecondNo = Console.ReadLine();
 
             Console.Write("Third value:");
-            double ThirdNo = Convert.ToDouble(Console.ReadLine());
+            string ThirdNo = Console.ReadLine();
 
             Max max = new Max();
             max.MaxInt(firstNo, SecondNo, ThirdNo);

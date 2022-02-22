@@ -8,27 +8,27 @@ namespace Generics
 {
     class Max
     {
-        public double max = 0;
+        public string max;
 
-        public void MaxInt(double firstNo, double secondNo, double thirdNo)
+        public void MaxInt(string firstValue, string secondValue, string thirdValue)
         {
-            if (firstNo.CompareTo(secondNo) > 0 && firstNo.CompareTo(thirdNo) > 0 ||
-               firstNo.CompareTo(secondNo) >= 0 && firstNo.CompareTo(thirdNo) > 0 ||
-               firstNo.CompareTo(secondNo) > 0 && firstNo.CompareTo(thirdNo) >= 0)
+            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0 ||
+               firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) > 0 ||
+               firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) >= 0)
             {
-                max = firstNo;
+                max = firstValue;
             }
-            if (secondNo.CompareTo(firstNo) > 0 && secondNo.CompareTo(thirdNo) > 0 ||
-               secondNo.CompareTo(firstNo) >= 0 && secondNo.CompareTo(thirdNo) > 0 ||
-               secondNo.CompareTo(firstNo) > 0 && secondNo.CompareTo(thirdNo) >= 0)
+            if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0 ||
+               secondValue.CompareTo(firstValue) >= 0 && secondValue.CompareTo(thirdValue) > 0 ||
+               secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) >= 0)
             {
-                max = secondNo;
+                max = secondValue;
             }
-            if (thirdNo.CompareTo(firstNo) > 0 && thirdNo.CompareTo(secondNo) > 0 ||
-               thirdNo.CompareTo(firstNo) >= 0 && thirdNo.CompareTo(secondNo) > 0 ||
-               thirdNo.CompareTo(firstNo) > 0 && thirdNo.CompareTo(secondNo) >= 0)
+            if (thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) > 0 ||
+               thirdValue.CompareTo(firstValue) >= 0 && thirdValue.CompareTo(secondValue) > 0 ||
+               thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) >= 0)
             {
-                max = thirdNo;
+                max = thirdValue;
             }
             Console.WriteLine($"\nMaximum value {max}");
 
