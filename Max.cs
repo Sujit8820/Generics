@@ -8,9 +8,9 @@ namespace Generics
 {
     class Max
     {
-        public int max = 0;
+        public double max = 0;
 
-        public void MaxInt(int firstNo, int secondNo, int thirdNo)
+        public void MaxInt(double firstNo, double secondNo, double thirdNo)
         {
             if (firstNo.CompareTo(secondNo) > 0 && firstNo.CompareTo(thirdNo) > 0 ||
                firstNo.CompareTo(secondNo) >= 0 && firstNo.CompareTo(thirdNo) > 0 ||
