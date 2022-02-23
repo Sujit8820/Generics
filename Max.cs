@@ -6,32 +6,32 @@ using System.Threading.Tasks;
 
 namespace Generics
 {
-    class Max
+    class MaxValue<T>
     {
-        public string max;
-
-        public void MaxInt(string firstValue, string secondValue, string thirdValue)
+        public T max;
+       
+        public T Max(T firstValue, T secondValue, T thirdValue)
         {
-            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0 ||
-               firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) > 0 ||
-               firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) >= 0)
+            if (Comparer<T>.Default.Compare (firstValue,secondValue) > 0 && Comparer<T>.Default.Compare(firstValue, thirdValue) > 0 ||
+               Comparer<T>.Default.Compare(firstValue, secondValue) >= 0 && Comparer<T>.Default.Compare(firstValue, thirdValue) > 0 ||
+               Comparer<T>.Default.Compare(firstValue, secondValue) > 0 && Comparer<T>.Default.Compare(firstValue, thirdValue) >= 0 )
             {
                 max = firstValue;
             }
-            if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0 ||
-               secondValue.CompareTo(firstValue) >= 0 && secondValue.CompareTo(thirdValue) > 0 ||
-               secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) >= 0)
+            if (Comparer<T>.Default.Compare(secondValue, firstValue) > 0 && Comparer<T>.Default.Compare(secondValue, thirdValue) > 0 ||
+               Comparer<T>.Default.Compare(secondValue, firstValue) >= 0 && Comparer<T>.Default.Compare(secondValue, thirdValue) > 0 ||
+              Comparer<T>.Default.Compare(secondValue, firstValue) > 0 && Comparer<T>.Default.Compare(secondValue, thirdValue) >= 0)
             {
                 max = secondValue;
             }
-            if (thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) > 0 ||
-               thirdValue.CompareTo(firstValue) >= 0 && thirdValue.CompareTo(secondValue) > 0 ||
-               thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) >= 0)
+            if (Comparer<T>.Default.Compare(thirdValue, firstValue) > 0 && Comparer<T>.Default.Compare(thirdValue, secondValue) > 0 ||
+               Comparer<T>.Default.Compare(thirdValue, firstValue) >= 0 && Comparer<T>.Default.Compare(thirdValue, secondValue) > 0 ||
+               Comparer<T>.Default.Compare(thirdValue, firstValue) > 0 && Comparer<T>.Default.Compare(thirdValue, secondValue) >= 0)
             {
                 max = thirdValue;
             }
-            Console.WriteLine($"\nMaximum value {max}");
-
+            Console.WriteLine(max);
+            return max;
         }
     }
 }
