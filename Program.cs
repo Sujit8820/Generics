@@ -9,17 +9,23 @@ namespace MaxValue
      
         public  static void Main()
         {
-            Generic<int> maxInt = new Generic<int>(10,20,30);
-           Console.WriteLine( maxInt.TestMaximum());
+            int[] arrayOfInt = {2,8,4,6,1,9,7 };
+            double[] arrayOfDouble = { 1.58,5.89,7.29,4.28,8.36,7.65,3.59 };
+            string[] arrayOfString = { "sde", "wed", "rtd", "iuw", "pod", "aef", "erf" };
 
-            Generic<double> maxDouble = new Generic<double>(50.68,78.53,83.94);
-            Console.WriteLine(maxDouble.TestMaximum());
-
-
-            Generic<string> maxstring = new Generic<string>("fged","wpod","zedt");
-            Console.WriteLine(maxstring.TestMaximum());
+            Generic<int> maxInt = new Generic<int>(arrayOfInt);
+            Console.WriteLine("Maximum Int");
+            maxInt.TestMaximum();
 
 
+            Generic<double> maxDouble = new Generic<double>(arrayOfDouble);
+            Console.WriteLine("\nMaximum Double");
+            maxDouble.TestMaximum();
+
+
+            Generic<string> maxstring = new Generic<string>(arrayOfString);
+            Console.WriteLine("\nMaximum String");
+            maxstring.TestMaximum();
         }
 
 

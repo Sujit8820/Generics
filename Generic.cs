@@ -8,44 +8,25 @@ namespace MaxValue
 {
     class Generic<T>
     {
-        public T max;
-        public T firstValue;
-        public T secondValue;
-        public T thirdValue;
+        public T[] array;
 
-        public Generic( T firstValue, T secondValue, T thirdValue)
-        {
-            this.firstValue = firstValue;
-            this.secondValue = secondValue;
-            this.thirdValue = thirdValue;
+        public  Generic(T[] array)
+        { 
+            this.array = array; 
         }
 
-
-        public T TestMaximum()
+        public T[] SortingArray(T[] array)
         {
-            if (Comparer<T>.Default.Compare(firstValue, secondValue) > 0 && Comparer<T>.Default.Compare(firstValue, thirdValue) > 0 ||
-               Comparer<T>.Default.Compare(firstValue, secondValue) >= 0 && Comparer<T>.Default.Compare(firstValue, thirdValue) > 0 ||
-               Comparer<T>.Default.Compare(firstValue, secondValue) > 0 && Comparer<T>.Default.Compare(firstValue, thirdValue) >= 0)
-            {
-                max = firstValue;
-            }
-            if (Comparer<T>.Default.Compare(secondValue, firstValue) > 0 && Comparer<T>.Default.Compare(secondValue, thirdValue) > 0 ||
-               Comparer<T>.Default.Compare(secondValue, firstValue) >= 0 && Comparer<T>.Default.Compare(secondValue, thirdValue) > 0 ||
-              Comparer<T>.Default.Compare(secondValue, firstValue) > 0 && Comparer<T>.Default.Compare(secondValue, thirdValue) >= 0)
-            {
-                max = secondValue;
-            }
-            if (Comparer<T>.Default.Compare(thirdValue, firstValue) > 0 && Comparer<T>.Default.Compare(thirdValue, secondValue) > 0 ||
-               Comparer<T>.Default.Compare(thirdValue, firstValue) >= 0 && Comparer<T>.Default.Compare(thirdValue, secondValue) > 0 ||
-               Comparer<T>.Default.Compare(thirdValue, firstValue) > 0 && Comparer<T>.Default.Compare(thirdValue, secondValue) >= 0)
-            {
-                max = thirdValue;
-            }
-            //Console.WriteLine(max);
-            return max;
+            Array.Sort(array);
+            Array.Reverse(array);
+            return array;
         }
-    }
-       
-        
-    
+      
+        public void  TestMaximum()
+        {
+            T[] reversedArray = SortingArray(array);
+            T maxValue = reversedArray[0];
+            Console.WriteLine(maxValue);
+        }  
+    }   
 }
