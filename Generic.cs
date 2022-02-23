@@ -10,9 +10,9 @@ namespace MaxValue
     {
         public T[] array;
 
-        public  Generic(T[] array)
-        { 
-            this.array = array; 
+        public Generic(T[] array)
+        {
+            this.array = array;
         }
 
         public T[] SortingArray(T[] array)
@@ -21,12 +21,17 @@ namespace MaxValue
             Array.Reverse(array);
             return array;
         }
-      
-        public void  TestMaximum()
+
+        public T TestMaximum()
         {
             T[] reversedArray = SortingArray(array);
             T maxValue = reversedArray[0];
-            Console.WriteLine(maxValue);
-        }  
-    }   
+            return maxValue;
+        }
+        public void PrintMax()
+        {
+            T max = TestMaximum();
+            Console.WriteLine("Maximum value is : " + max);
+        }
+    }
 }

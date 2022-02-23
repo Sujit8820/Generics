@@ -6,28 +6,22 @@ namespace MaxValue
 {
     class program
     {
-     
-        public  static void Main()
+
+        public static void Main()
         {
-            int[] arrayOfInt = {2,8,4,6,1,9,7 };
-            double[] arrayOfDouble = { 1.58,5.89,7.29,4.28,8.36,7.65,3.59 };
+            int[] arrayOfInt = { 2, 8, 4, 6, 1, 9, 7 };
+            double[] arrayOfDouble = { 1.58, 5.89, 7.29, 4.28, 8.36, 7.65, 3.59 };
             string[] arrayOfString = { "sde", "wed", "rtd", "iuw", "pod", "aef", "erf" };
 
             Generic<int> maxInt = new Generic<int>(arrayOfInt);
-            Console.WriteLine("Maximum Int");
-            maxInt.TestMaximum();
-
+            maxInt.PrintMax();
 
             Generic<double> maxDouble = new Generic<double>(arrayOfDouble);
-            Console.WriteLine("\nMaximum Double");
-            maxDouble.TestMaximum();
-
+            maxDouble.PrintMax();
 
             Generic<string> maxstring = new Generic<string>(arrayOfString);
-            Console.WriteLine("\nMaximum String");
-            maxstring.TestMaximum();
+            maxstring.PrintMax();
+
         }
-
-
     }
 }
