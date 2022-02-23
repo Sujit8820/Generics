@@ -4,17 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Generics
+namespace MaxValue
 {
-    class MaxValue<T>
+    class Generic<T>
     {
         public T max;
-       
-        public T Max(T firstValue, T secondValue, T thirdValue)
+        public T firstValue;
+        public T secondValue;
+        public T thirdValue;
+
+        public Generic( T firstValue, T secondValue, T thirdValue)
         {
-            if (Comparer<T>.Default.Compare (firstValue,secondValue) > 0 && Comparer<T>.Default.Compare(firstValue, thirdValue) > 0 ||
+            this.firstValue = firstValue;
+            this.secondValue = secondValue;
+            this.thirdValue = thirdValue;
+        }
+
+
+        public T TestMaximum()
+        {
+            if (Comparer<T>.Default.Compare(firstValue, secondValue) > 0 && Comparer<T>.Default.Compare(firstValue, thirdValue) > 0 ||
                Comparer<T>.Default.Compare(firstValue, secondValue) >= 0 && Comparer<T>.Default.Compare(firstValue, thirdValue) > 0 ||
-               Comparer<T>.Default.Compare(firstValue, secondValue) > 0 && Comparer<T>.Default.Compare(firstValue, thirdValue) >= 0 )
+               Comparer<T>.Default.Compare(firstValue, secondValue) > 0 && Comparer<T>.Default.Compare(firstValue, thirdValue) >= 0)
             {
                 max = firstValue;
             }
@@ -30,8 +41,11 @@ namespace Generics
             {
                 max = thirdValue;
             }
-            Console.WriteLine(max);
+            //Console.WriteLine(max);
             return max;
         }
     }
+       
+        
+    
 }
